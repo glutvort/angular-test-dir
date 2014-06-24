@@ -1,0 +1,37 @@
+.main-container{
+    margin: 50px;
+}
+.header{
+    float: left;
+    position: absolute;
+    top: 15px;
+}
+.main-page-link{
+    left: 400px;
+    top: 40px;
+    position: absolute;
+}
+.contacts-page-link{
+    position: absolute;
+    top: 40px;
+    left: 520px;
+}
+
+table{
+    position: absolute;
+    top: 100px;
+}
+
+td{
+    width: 400px;
+    height: 50px;
+}
+
+td span:first-child{
+    display: inline-block;
+    width: 130px;
+}
+
+table.contacts-list{
+    text-align: left;
+}
