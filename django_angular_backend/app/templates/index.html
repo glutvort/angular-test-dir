@@ -10,6 +10,7 @@
     <script type="text/javascript" src="{% static 'routeProvider.js' %}"></script>
     <script type="text/javascript" src="{% static 'mainController.js' %}"></script>
     <script type="text/javascript" src="{% static 'contactsController.js' %}"></script>
+    <script type="text/javascript" src="{% static 'singleContactController.js' %}"></script>
 
 </head>
 
@@ -79,7 +80,7 @@
                     <th>Cell phone</th>
                     <th>Landline:</th>
                 </tr>
-                <tr ng-repeat="contact in contactsModel">
+                <tr ng-repeat="contact in contactsModel"  ng-click="openContactDetails(contact)" style="cursor: pointer;">
                     <td>
                         <span ng-bind="contact.first_name + ' ' + contact.last_name"></span>
                     </td>
@@ -95,6 +96,55 @@
                 </tr>
 
             </table>
+        </div>
+    </script>
+
+    <script type='text/ng-template' id='contact.html'>
+        <div ng-controller="singleContactController">
+            <table>
+                <tr>
+                    <td>
+                        <span>Name:</span>
+                        <input ng-model="model.first_name"/>
+                    </td>
+                    <td>
+                        <span>Last Name:</span>
+                        <input ng-model="model.last_name"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>Email:</span>
+                        <input ng-model="model.email"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>Cell phone:</span>
+                        <input ng-model="model.cellphone_number"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>Landline:</span>
+                        <input ng-model="model.phone_number"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>Birth date::</span>
+                        <input ng-model="model.birth_date"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>JID:</span>
+                        <input ng-model="model.jabber_id"/>
+                    </td>
+                </tr>
+            </table>
+            <button ng-click="save()" class="save-contact-button">SAVE</button>
+            <a href="#/contacts" class="back-to-contact-list">Back to all contacts</a>
         </div>
     </script>
 </div>

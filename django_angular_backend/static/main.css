@@ -35,3 +35,16 @@ td span:first-child{
 table.contacts-list{
     text-align: left;
 }
+
+.save-contact-button{
+    position: absolute;
+    top: 440px;
+    font-size: 15px;
+    width: 88px;
+    height: 31px;
+}
+
+.back-to-contact-list{
+    position: absolute;
+    top: 495px;
+}
