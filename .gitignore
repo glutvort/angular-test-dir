@@ -1,0 +1,6 @@
+requirements.txt
+app.sqlite3
+Makefile
+README
+.idea/
+.env/
