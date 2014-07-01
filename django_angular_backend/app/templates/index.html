@@ -7,9 +7,10 @@
     <script type="text/javascript" src="{% static 'angular.js' %}"></script>
     <script type="text/javascript" src="{% static 'angular-route.js' %}"></script>
     <script type="text/javascript" src="{% static 'ui-bootstrap.js' %}"></script>
-    <script type="text/javascript" src="{% static 'routeProvider.js' %}"></script>
-    <script type="text/javascript" src="{% static 'mainController.js' %}"></script>
-    <script type="text/javascript" src="{% static 'contactsController.js' %}"></script>
+    <script type="text/javascript" src="{% static 'main.js' %}"></script>
+    <script type="text/javascript" src="{% static 'services.js' %}"></script>
+    <script type="text/javascript" src="{% static 'controllers.js' %}"></script>
+    <script type="text/javascript" src="{% static 'routeSettings.js' %}"></script>
 
 </head>
 
@@ -23,80 +24,7 @@
     <div ng-view>
 
     </div>
-    <script type='text/ng-template' id='home.html'>
-        <div ng-controller="mainController">
 
-            <table>
-                <tr>
-                    <td>
-                        <span>First Name:</span>
-                        <span ng-bind="user.firstName"></span>
-                    </td>
-                    <td>
-                        <span>Email:</span>
-                        <span ng-bind="user.email"></span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span>Last Name:</span>
-                        <span ng-bind="user.lastName"></span>
-                    </td>
-                    <td>
-                        <span>Jabber:</span>
-                        <span ng-bind="user.jabber"></span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span>Date of birth:</span>
-                        <span ng-bind="user.birthDate"></span>
-                    </td>
-                    <td>
-                        <span>Skype:</span>
-                        <span ng-bind="user.skype"></span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span>Bio:</span>
-                        <span ng-bind="user.bio"></span>
-                    </td>
-                    <td>
-                        <a href="javascript:void(0)">Other...</a>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </script>
-
-    <script type='text/ng-template' id='list.html'>
-        <div ng-controller="contactsController">
-            <table class="contacts-list">
-                <tr>
-                    <th>Name:</th>
-                    <th>Email:</th>
-                    <th>Cell phone</th>
-                    <th>Landline:</th>
-                </tr>
-                <tr ng-repeat="contact in contactsModel">
-                    <td>
-                        <span ng-bind="contact.first_name + ' ' + contact.last_name"></span>
-                    </td>
-                    <td>
-                        <span ng-bind="contact.email"></span>
-                    </td>
-                    <td>
-                        <span ng-bind="contact.phone_number"></span>
-                    </td>
-                    <td>
-                        <span ng-bind="contact.cellphone_number"></span>
-                    </td>
-                </tr>
-
-            </table>
-        </div>
-    </script>
 </div>
 </body>
 </html>
