@@ -17,7 +17,6 @@
 <div  ng-app="app" class="main-container">
     <h2 class="header">My contact book</h2>
     <a class="main-page-link" href="#/home">Main page</a>
-    <a class="contacts-page-link" href="#/contacts">Contacts</a>
 
 
     <div ng-view>
@@ -66,34 +65,6 @@
                         <a href="javascript:void(0)">Other...</a>
                     </td>
                 </tr>
-            </table>
-        </div>
-    </script>
-
-    <script type='text/ng-template' id='list.html'>
-        <div ng-controller="contactsController">
-            <table class="contacts-list">
-                <tr>
-                    <th>Name:</th>
-                    <th>Email:</th>
-                    <th>Cell phone</th>
-                    <th>Landline:</th>
-                </tr>
-                <tr ng-repeat="contact in contactsModel">
-                    <td>
-                        <span ng-bind="contact.first_name + ' ' + contact.last_name"></span>
-                    </td>
-                    <td>
-                        <span ng-bind="contact.email"></span>
-                    </td>
-                    <td>
-                        <span ng-bind="contact.phone_number"></span>
-                    </td>
-                    <td>
-                        <span ng-bind="contact.cellphone_number"></span>
-                    </td>
-                </tr>
-
             </table>
         </div>
     </script>
