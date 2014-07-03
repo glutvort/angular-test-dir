@@ -1,0 +1,25 @@
+<div ng-controller="contactsController">
+    <table class="contacts-list">
+        <tr>
+            <th>Name:</th>
+            <th>Email:</th>
+            <th>Cell phone</th>
+            <th>Landline:</th>
+        </tr>
+        <tr ng-repeat="contact in contactsModel">
+            <td>
+                <a href="#/contacts/{{contact.id}}/" ng-bind="contact.first_name + ' ' + contact.last_name"></a>
+            </td>
+            <td>
+                <span ng-bind="contact.email"></span>
+            </td>
+            <td>
+                <span ng-bind="contact.cellphone_number"></span>
+            </td>
+            <td>
+                <span ng-bind="contact.phone_number"></span>
+            </td>
+        </tr>
+
+    </table>
+</div>

@@ -1,0 +1,46 @@
+<div ng-controller="singleContactController">
+    <table>
+        <tr>
+            <td>
+                <span>Name:</span>
+                <input ng-model="model.first_name"/>
+            </td>
+            <td>
+                <span>Last Name:</span>
+                <input ng-model="model.last_name"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>Email:</span>
+                <input ng-model="model.email"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>Cell phone:</span>
+                <input ng-model="model.cellphone_number"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>Landline:</span>
+                <input ng-model="model.phone_number"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>Birth date:</span>
+                <input ng-model="model.birth_date"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>JID:</span>
+                <input ng-model="model.jabber_id"/>
+            </td>
+        </tr>
+    </table>
+    <button ng-click="save(model)" class="save-contact-button">SAVE</button>
+    <a href="#/contacts" class="back-to-contact-list">Back to all contacts</a>
+</div>
