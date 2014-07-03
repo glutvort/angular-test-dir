@@ -32,6 +32,10 @@ td{
     height: 50px;
 }
 
+th{
+    width: 400px;
+    height: 30px;
+}
 td span:first-child{
     display: inline-block;
     width: 130px;

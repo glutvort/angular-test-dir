@@ -7,10 +7,12 @@
     <script type="text/javascript" src="{% static 'angular.js' %}"></script>
     <script type="text/javascript" src="{% static 'angular-route.js' %}"></script>
     <script type="text/javascript" src="{% static 'ui-bootstrap.js' %}"></script>
-    <script type="text/javascript" src="{% static 'routeProvider.js' %}"></script>
-    <script type="text/javascript" src="{% static 'mainController.js' %}"></script>
-    <script type="text/javascript" src="{% static 'contactsController.js' %}"></script>
-    <script type="text/javascript" src="{% static 'singleContactController.js' %}"></script>
+    <script type="text/javascript" src="{% static 'lodash.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'main.js' %}"></script>
+    <script type="text/javascript" src="{% static 'services.js' %}"></script>
+    <script type="text/javascript" src="{% static 'controllers.js' %}"></script>
+    <script type="text/javascript" src="{% static 'routeSettings.js' %}"></script>
+    <script type="text/javascript" src="{% static 'filters.js' %}"></script>
 
 </head>
 
@@ -20,141 +22,10 @@
     <a class="main-page-link" href="#/home">Main page</a>
     <a class="contacts-page-link" href="#/contacts">Contacts</a>
 
-
     <div ng-view>
 
     </div>
-    <script type='text/ng-template' id='home.html'>
-        <div ng-controller="mainController">
 
-            <table>
-                <tr>
-                    <td>
-                        <span>First Name:</span>
-                        <span ng-bind="user.firstName"></span>
-                    </td>
-                    <td>
-                        <span>Email:</span>
-                        <span ng-bind="user.email"></span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span>Last Name:</span>
-                        <span ng-bind="user.lastName"></span>
-                    </td>
-                    <td>
-                        <span>Jabber:</span>
-                        <span ng-bind="user.jabber"></span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span>Date of birth:</span>
-                        <span ng-bind="user.birthDate"></span>
-                    </td>
-                    <td>
-                        <span>Skype:</span>
-                        <span ng-bind="user.skype"></span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span>Bio:</span>
-                        <span ng-bind="user.bio"></span>
-                    </td>
-                    <td>
-                        <a href="javascript:void(0)">Other...</a>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </script>
-
-    <script type='text/ng-template' id='list.html'>
-        <div ng-controller="contactsController">
-            <div class="search-contact-list-input">
-                <button ng-click="orderValue=orderOpt.value;reverse=!reverse">Order by</button>
-                <select ng-model="orderOpt" ng-options="opt.name for opt in options">
-                </select>
-                <span>Search: </span>
-                <input ng-model="searchValue"/>
-            </div>
-            <table class="contacts-list">
-                <tr>
-                    <th>Name:</th>
-                    <th>Email:</th>
-                    <th>Cell phone</th>
-                    <th>Landline:</th>
-                </tr>
-                <tr ng-repeat="contact in contactsModel | filter: searchValue | paginationFilter:paginations | orderBy:orderValue:reverse"  ng-click="openContactDetails(contact)" style="cursor: pointer;">
-                    <td>
-                        <span ng-bind="contact.first_name + ' ' + contact.last_name"></span>
-                    </td>
-                    <td>
-                        <span ng-bind="contact.email"></span>
-                    </td>
-                    <td>
-                        <span ng-bind="contact.phone_number | usaNumber"></span>
-                    </td>
-                    <td>
-                        <span ng-bind="contact.cellphone_number"></span>
-                    </td>
-                </tr>
-            </table>
-            <a href="javascript:void(0)" ng-hide="paginations.p == minPage" ng-click="paginations.p = paginations.p - 1;" class="go-to-prev-page">Go to previous page</a>
-            <a href="javascript:void(0)" ng-hide="paginations.p == maxPage" ng-click="paginations.p = paginations.p + 1;" class="go-to-next-page">Go to next page</a>
-        </div>
-    </script>
-
-    <script type='text/ng-template' id='contact.html'>
-        <div ng-controller="singleContactController">
-            <table>
-                <tr>
-                    <td>
-                        <span>Name:</span>
-                        <input ng-model="model.first_name"/>
-                    </td>
-                    <td>
-                        <span>Last Name:</span>
-                        <input ng-model="model.last_name"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span>Email:</span>
-                        <input ng-model="model.email"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span>Cell phone:</span>
-                        <input ng-model="model.cellphone_number"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span>Landline:</span>
-                        <input ng-model="model.phone_number"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span>Birth date::</span>
-                        <input ng-model="model.birth_date"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span>JID:</span>
-                        <input ng-model="model.jabber_id"/>
-                    </td>
-                </tr>
-            </table>
-            <button ng-click="save()" class="save-contact-button">SAVE</button>
-            <a href="#/contacts" class="back-to-contact-list">Back to all contacts</a>
-        </div>
-    </script>
 </div>
 </body>
 </html>
