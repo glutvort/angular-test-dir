@@ -9,10 +9,6 @@ app.filter('usaNumber', function () {
     return function (items,pager) {
         var result = [];
 
-        /*angular.forEach(items,function(item,index){
-            if ((index+1) > pager.n*(pager.p-1) && (index+1) <= pager.n*pager.p)
-                result.push(item);
-        })*/
         var start = pager.n*(pager.p-1)
         var end = pager.n*pager.p
         result = items.slice(start,end)
