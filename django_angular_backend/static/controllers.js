@@ -1,4 +1,4 @@
-function mainController($scope) {
+app.controller('mainController',['$scope',function($scope) {
     $scope.user = {
         firstName:"Eugene",
         lastName: "Zakharov",
@@ -8,4 +8,4 @@ function mainController($scope) {
         skype: "evgeniy_zakharov1",
         bio: "Something about me"
     }
-}
+}])
