@@ -19,11 +19,12 @@ app.controller('mainController',['$scope',function($scope) {
     .controller('singleContactController', ['$scope', 'contactsService','$routeParams', '$http', function($scope,contactsService,$routeParams,$http){
 
         var contactId = parseInt($routeParams.contactId);
-        $scope.model = undefined
+        $scope.model = undefined;
 
-        $http({method:"GET", url: location.origin+'/api/v1/contact/' + contactId}).success(function(contactData){
+        var promise = contactsService.methods.getSingleContact(contactId);
+        promise.then(function(contactData){
             $scope.model = contactData;
-        });
+        })
 
         $scope.save = contactsService.methods.saveContact;
     }])
