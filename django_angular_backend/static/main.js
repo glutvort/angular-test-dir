@@ -1,1 +1,1 @@
-var app = angular.module('app',['ngRoute','ui.bootstrap'])
+var app = angular.module('app',['ngRoute']);

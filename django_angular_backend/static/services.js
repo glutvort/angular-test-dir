@@ -17,6 +17,18 @@ app.factory('contactsService', ['$http', '$q',
                  return deferred.promise
             }
 
+            var getSingleContact = function(id){
+                var deferred = $q.defer();
+
+                $http({method:"GET", url: location.origin+'/api/v1/contact/' + id}).success(function(contactData){
+                    deferred.resolve(contactData);
+                }).error(function(){
+                    deferred.reject();
+                });
+
+                return deferred.promise;
+            }
+
             var saveContact = function(contact){
                 $http({
                     url: 'http://127.0.0.1:8000/api/v1/contact/'+contact.id,
@@ -30,7 +42,8 @@ app.factory('contactsService', ['$http', '$q',
                 data: svcData,
                 methods: {
                     getContacts: getContacts,
-                    saveContact: saveContact
+                    saveContact: saveContact,
+                    getSingleContact:getSingleContact
                 }
             }
         }])

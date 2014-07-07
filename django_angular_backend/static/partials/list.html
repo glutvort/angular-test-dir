@@ -8,12 +8,24 @@
     </div>
     <table class="contacts-list">
         <tr>
-            <th>Name:</th>
-            <th>Email:</th>
-            <th>Cell phone</th>
-            <th>Landline:</th>
+            <th>Name:
+                <i class="direct" ng-show="orderOpt == options[0] && !reverse"></i>
+                <i class="reverse" ng-show="orderOpt == options[0] && reverse"></i>
+            </th>
+            <th>Email:
+                <i class="direct" ng-show="orderOpt == options[1] && !reverse"></i>
+                <i class="reverse" ng-show="orderOpt == options[1] && reverse"></i>
+            </th>
+            <th>Cell phone:
+                <i class="direct" ng-show="orderOpt == options[2] && !reverse"></i>
+                <i class="reverse" ng-show="orderOpt == options[2] && reverse"></i>
+            </th>
+            <th>Landline:
+                <i class="direct" ng-show="orderOpt == options[3] && !reverse"></i>
+                <i class="reverse" ng-show="orderOpt == options[3] && reverse"></i>
+            </th>
         </tr>
-        <tr ng-repeat="contact in contactsModel | orderContactsBy:orderValue:reverse | searchContactsFilter:searchValue:this | paginationFilter:paginations"  ng-click="openContactDetails(contact)" style="cursor: pointer;">
+        <tr ng-repeat="contact in contactsModel | orderContactsBy:orderValue:reverse | searchContactsFilter:searchValue:this | paginationFilter:paginations">
             <td>
                 <a href="#/contacts/{{contact.id}}/" ng-bind="contact.first_name + ' ' + contact.last_name"></a>
             </td>

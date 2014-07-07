@@ -33,6 +33,7 @@ td{
 }
 
 th{
+    position: relative;
     width: 400px;
     height: 30px;
 }
@@ -72,4 +73,22 @@ table.contacts-list{
     position: absolute;
     top: 480px;
     right: 300px;
+}
+
+.direct{
+    content: '';
+    position: absolute;
+    left: 365px;
+    top: 10px;
+    border: 6px solid transparent;
+    border-top: 6px solid black;
+}
+
+.reverse{
+    content: '';
+    position: absolute;
+    left: 365px;
+    top: 8px;
+    border: 6px solid transparent;
+    border-bottom: 6px solid black;
 }
