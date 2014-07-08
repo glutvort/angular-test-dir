@@ -43,6 +43,7 @@ app.controller('mainController',['$scope',function($scope) {
         var promise = contactsService.methods.getSingleContact(contactId);
         promise.then(function(contactData){
             $scope.model = contactData;
+            $scope.$root.$emit("modelLoaded", $scope.model.cellphone_number)
         })
 
         $scope.save = contactsService.methods.saveContact;

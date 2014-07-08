@@ -1,46 +1,60 @@
 <div ng-controller="singleContactController">
-    <table>
-        <tr>
-            <td>
-                <span>Name:</span>
-                <input ng-model="model.first_name"/>
-            </td>
-            <td>
-                <span>Last Name:</span>
-                <input ng-model="model.last_name"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <span>Email:</span>
-                <input ng-model="model.email"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <span>Cell phone:</span>
-                <input ng-model="model.cellphone_number"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <span>Landline:</span>
-                <input ng-model="model.phone_number"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <span>Birth date:</span>
-                <input ng-model="model.birth_date"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <span>JID:</span>
-                <input ng-model="model.jabber_id"/>
-            </td>
-        </tr>
-    </table>
-    <button ng-click="save(model)" class="save-contact-button">SAVE</button>
+    <form name="singleContactForm">
+        <table class="single-contact-table">
+            <tr>
+                <td>
+                    <span>Name:</span>
+                    <input name="firstName" ng-model="model.first_name" type="text" required/>
+                    <span ng-show="singleContactForm.firstName.$invalid" class="required-tooltip">
+                       * Required field
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Last Name:</span>
+                    <input name="lastName" ng-model="model.last_name" type="text" required/>
+                    <span ng-show="singleContactForm.lastName.$invalid" class="required-tooltip">
+                       * Required field
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Email:</span>
+                    <input ng-model="model.email"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Cell phone:</span>
+                    <input name="cellPhone" ng-model="model.cellphone_number" type="text" validate-phone/>
+                    <span ng-show="singleContactForm.cellPhone.$invalid" class="required-tooltip">
+                       * Value must starts with `+` and contains 11 numbers
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Landline:</span>
+                    <input ng-model="model.phone_number"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Birth date:</span>
+                    <input ng-model="model.birth_date"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>JID:</span>
+                    <input ng-model="model.jabber_id"/>
+                </td>
+            </tr>
+        </table>
+        <button ng-click="save(model)" class="save-contact-button" ng-disabled="singleContactForm.$invalid">SAVE</button>
+        <span ng-show="singleContactForm.$invalid" class="has-error-tooltip">Has errors</span>
+    </form>
     <a href="#/contacts" class="back-to-contact-list">Back to all contacts</a>
 </div>
