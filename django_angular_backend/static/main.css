@@ -115,3 +115,18 @@ table.contacts-list{
 .required-tooltip{
     color: red;
 }
+
+.last-added-table{
+    left: 930px;
+    width: 220px;
+    position: absolute;
+}
+.last-added-table-header{
+    left: 930px;
+    position: absolute;
+    font-weight: bold;
+}
+
+.last-added-table tr{
+    font-style: italic;
+}
