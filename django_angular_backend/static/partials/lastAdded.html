@@ -6,5 +6,8 @@
             <span ng-bind="contact.cellphone_number" ng-show="contact.cellphone_number && contact.cellphone_number.length > 0"></span>
             <span ng-hide="contact.cellphone_number && contact.cellphone_number.length > 0">No number</span>
         </td>
+        <td>
+            <img src="static/cake.png" ng-show="isBirthday(contact)">
+        </td>
     </tr>
 </table>

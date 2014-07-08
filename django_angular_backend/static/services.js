@@ -38,12 +38,23 @@ app.factory('contactsService', ['$http', '$q',
                     alert("Contact updated")
                 });
             }
+
+            var isBirthday = function(contact){
+                var today = new Date();
+                var birthDate = contact.birth_date.split("-");
+                if (today.getMonth()+1==parseInt(birthDate[1]) && today.getDate()==parseInt(birthDate[2])){
+                    return true;
+                } else {
+                    return false;
+                }
+            }
             return  {
                 data: svcData,
                 methods: {
                     getContacts: getContacts,
                     saveContact: saveContact,
-                    getSingleContact:getSingleContact
+                    getSingleContact:getSingleContact,
+                    isBirthday: isBirthday
                 }
             }
         }])

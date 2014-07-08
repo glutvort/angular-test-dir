@@ -4,6 +4,7 @@ app.directive('lastAddedContacts',['contactsService','$filter', function(contact
         templateUrl:"static/partials/lastAdded.html",
         scope:true,
         controller: function($scope){
+            $scope.isBirthday = contactsService.methods.isBirthday
             var promise = contactsService.methods.getContacts();
             promise.then(function(contactData){
                 $scope.filteredData = $filter("orderBy")(contactData,"date_created",false);

@@ -10,6 +10,7 @@ app.controller('mainController',['$scope',function($scope) {
         };
     }])
     .controller('contactsController', ['$scope', 'contactsService', function($scope,contactsService){
+            $scope.isBirthday = contactsService.methods.isBirthday
             $scope.contactsModel = [];
             var promise = contactsService.methods.getContacts();
             promise.then(function(data){
@@ -36,7 +37,8 @@ app.controller('mainController',['$scope',function($scope) {
 
     }])
     .controller('singleContactController', ['$scope', 'contactsService','$routeParams', function($scope,contactsService,$routeParams){
-
+        $( "#birthday-id" ).datepicker();
+        $( "#birthday-id" ).datepicker( "option", "dateFormat", "yy-mm-dd" );
         var contactId = parseInt($routeParams.contactId);
         $scope.model = undefined;
 

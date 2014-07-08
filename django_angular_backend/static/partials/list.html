@@ -24,6 +24,8 @@
                 <i class="direct" ng-show="orderOpt == options[3] && !reverse"></i>
                 <i class="reverse" ng-show="orderOpt == options[3] && reverse"></i>
             </th>
+            <th>Birthday:
+            </th>
         </tr>
         <tr ng-repeat="contact in contactsModel | orderContactsBy:orderValue:reverse | searchContactsFilter:searchValue:this | paginationFilter:paginations">
             <td>
@@ -37,6 +39,9 @@
             </td>
             <td>
                 <span ng-bind="contact.phone_number | usaNumber"></span>
+            </td>
+            <td>
+                <img src="static/cake.png" ng-show="isBirthday(contact)">
             </td>
         </tr>
     </table>

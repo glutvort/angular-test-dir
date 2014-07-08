@@ -1,9 +1,12 @@
 {% load static %}
 <html>
 <head>
+    <link rel="stylesheet" href="{% static 'date-picker/jquery-ui.css' %}">
     <link rel="stylesheet" href="{% static 'main.css' %}">
 
     <!-- include scripts-->
+    <script type="text/javascript" src="{% static 'date-picker/external/jquery/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'date-picker/jquery-ui.js' %}"></script>
     <script type="text/javascript" src="{% static 'angular.js' %}"></script>
     <script type="text/javascript" src="{% static 'angular-route.js' %}"></script>
     <script type="text/javascript" src="{% static 'lodash.min.js' %}"></script>
