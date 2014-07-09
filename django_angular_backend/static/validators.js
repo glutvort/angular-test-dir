@@ -11,9 +11,6 @@ app.directive('validatePhone', function() {
                     return undefined;
                 }
             });
-            scope.$root.$on('modelLoaded',function(event, phone){
-                ctrl.$parsers[0](phone);
-            });
         }
     };
 });
