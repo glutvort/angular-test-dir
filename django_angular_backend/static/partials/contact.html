@@ -53,8 +53,10 @@
                 </td>
             </tr>
         </table>
-        <button ng-click="save(model)" class="save-contact-button" ng-disabled="singleContactForm.$invalid">SAVE</button>
+        <button ng-click="save(model)" class="save-contact-button" ng-disabled="singleContactForm.$invalid || singleContactForm.$pristine">SAVE</button>
         <span ng-show="singleContactForm.$invalid" class="has-error-tooltip">Has errors</span>
+        <span ng-show="singleContactForm.$pristine" class="message">Not changed</span>
+        <span ng-show="contactSaved && singleContactForm.$pristine" class="message saved-message">Saved</span>
     </form>
     <a href="#/contacts" class="back-to-contact-list">Back to all contacts</a>
 </div>

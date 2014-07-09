@@ -36,15 +36,19 @@ app.controller('mainController',['$scope',function($scope) {
 
     }])
     .controller('singleContactController', ['$scope', 'contactsService','$routeParams', function($scope,contactsService,$routeParams){
-
+        $scope.contactSaved = false;
         var contactId = parseInt($routeParams.contactId);
         $scope.model = undefined;
 
         var promise = contactsService.methods.getSingleContact(contactId);
         promise.then(function(contactData){
             $scope.model = contactData;
-            $scope.$root.$emit("modelLoaded", $scope.model.cellphone_number)
         })
 
         $scope.save = contactsService.methods.saveContact;
+
+        $scope.$root.$on("contactSaved", function(){
+            $scope.contactSaved = true
+            $scope.singleContactForm.$setPristine()
+        })
     }])

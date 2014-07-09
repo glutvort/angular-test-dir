@@ -1,5 +1,5 @@
-app.factory('contactsService', ['$http', '$q',
-        function ($http, $q) {
+app.factory('contactsService', ['$http', '$q', '$rootScope',
+        function ($http, $q, $rootScope) {
             var svcData = {
                 contacts:[]
             }
@@ -35,7 +35,7 @@ app.factory('contactsService', ['$http', '$q',
                     method: 'PUT',
                     data: contact
                 }).success(function(){
-                    alert("Contact updated")
+                    $rootScope.$emit("contactSaved")
                 });
             }
             return  {

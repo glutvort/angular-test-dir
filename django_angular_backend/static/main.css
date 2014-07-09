@@ -115,3 +115,14 @@ table.contacts-list{
 .required-tooltip{
     color: red;
 }
+
+.message{
+    position: absolute;
+    top: 477px;
+    left: 175px;
+    color: blue;
+}
+
+.saved-message{
+    left: 280px
+}
