@@ -142,8 +142,9 @@ table.contacts-list{
 }
 
 
-.birthday-image{
+.birthday-image {
     width: 120px;
+}
 
 .message{
     position: absolute;
