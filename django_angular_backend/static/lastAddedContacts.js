@@ -1,6 +1,6 @@
 app.directive('lastAddedContacts',['contactsService','$filter', function(contactsService,$filter) {
     return {
-        restrict:'A',
+        restrict:'AE',
         templateUrl:"static/partials/lastAdded.html",
         scope:true,
         controller: function($scope){

@@ -9,20 +9,16 @@
     <table class="contacts-list">
         <tr>
             <th>Name:
-                <i class="direct" ng-show="orderOpt == options[0] && !reverse"></i>
-                <i class="reverse" ng-show="orderOpt == options[0] && reverse"></i>
+                <i ng-class="{direct: !reverse, reverse: reverse}" ng-show="orderOpt.value == options[0].value"></i>
             </th>
             <th>Email:
-                <i class="direct" ng-show="orderOpt == options[1] && !reverse"></i>
-                <i class="reverse" ng-show="orderOpt == options[1] && reverse"></i>
+                <i ng-class="{direct: !reverse, reverse: reverse}" ng-show="orderOpt.value == options[1].value"></i>
             </th>
             <th>Cell phone:
-                <i class="direct" ng-show="orderOpt == options[2] && !reverse"></i>
-                <i class="reverse" ng-show="orderOpt == options[2] && reverse"></i>
+                <i ng-class="{direct: !reverse, reverse: reverse}" ng-show="orderOpt.value == options[2].value"></i>
             </th>
             <th>Landline:
-                <i class="direct" ng-show="orderOpt == options[3] && !reverse"></i>
-                <i class="reverse" ng-show="orderOpt == options[3] && reverse"></i>
+                <i ng-class="{direct: !reverse, reverse: reverse}" ng-show="orderOpt.value == options[3].value"></i>
             </th>
             <th class="birthday-image">Birthday:
             </th>
