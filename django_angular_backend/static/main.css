@@ -1,0 +1,158 @@
+.main-container{
+    margin: 50px;
+}
+.header{
+    float: left;
+    position: absolute;
+    top: 15px;
+}
+.main-page-link{
+    left: 400px;
+    top: 40px;
+    position: absolute;
+}
+.contacts-page-link{
+    position: absolute;
+    top: 40px;
+    left: 520px;
+}
+
+.single-contact-table,
+.home-page-table,
+.last-added-table,
+.contacts-list
+{
+    position: absolute;
+    top: 100px;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+td,th{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+td{
+    width: 250px;
+    height: 50px;
+}
+
+th{
+    position: relative;
+    width: 250px;
+    height: 30px;
+}
+
+.home-page-table th,
+.home-page-table td{
+    width: 350px;
+}
+
+td span:first-child{
+    display: inline-block;
+    width: 130px;
+}
+
+table.contacts-list{
+    text-align: left;
+    top: 160px
+}
+
+.save-contact-button{
+    position: absolute;
+    top: 470px;
+    font-size: 15px;
+    width: 88px;
+    height: 31px;
+}
+
+.back-to-contact-list{
+    position: absolute;
+    top: 525px;
+    left: 57px;
+}
+
+.search-contact-list-input{
+    position: absolute;
+    top: 100px;
+}
+.go-to-next-page{
+    position: absolute;
+    top: 480px;
+    right: 660px;
+}
+.go-to-prev-page{
+    position: absolute;
+    top: 480px;
+    right: 800px;
+}
+
+.direct{
+    content: '';
+    position: absolute;
+    left: 210px;
+    top: 10px;
+    border: 6px solid transparent;
+    border-top: 6px solid black;
+}
+
+.reverse{
+    content: '';
+    position: absolute;
+    left: 210px;
+    top: 8px;
+    border: 6px solid transparent;
+    border-bottom: 6px solid black;
+}
+
+.single-contact-table{
+    width: 660px;
+}
+
+.has-error-tooltip{
+    position: absolute;
+    top: 477px;
+    left: 175px;
+    color: red;
+}
+
+[validate-phone].ng-valid, [required].ng-valid{
+    border: 1px solid green;
+}
+[validate-phone].ng-invalid, [required].ng-invalid{
+    border: 1px solid red;
+}
+
+.required-tooltip{
+    color: red;
+}
+
+.last-added-table{
+    left: 930px;
+    width: 220px;
+    position: absolute;
+}
+.last-added-table-header{
+    left: 930px;
+    position: absolute;
+    font-weight: bold;
+}
+
+.last-added-table tr{
+    font-style: italic;
+}
+
+
+.birthday-image {
+    width: 120px;
+}
+
+.message{
+    position: absolute;
+    top: 477px;
+    left: 175px;
+    color: blue;
+}
+
+.saved-message{
+    left: 280px
+}

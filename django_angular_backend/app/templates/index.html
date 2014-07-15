@@ -1,0 +1,35 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'date-picker/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+
+    <!-- include scripts-->
+    <script type="text/javascript" src="{% static 'date-picker/external/jquery/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'date-picker/jquery-ui.js' %}"></script>
+    <script type="text/javascript" src="{% static 'angular.js' %}"></script>
+    <script type="text/javascript" src="{% static 'angular-route.js' %}"></script>
+    <script type="text/javascript" src="{% static 'lodash.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'main.js' %}"></script>
+    <script type="text/javascript" src="{% static 'services.js' %}"></script>
+    <script type="text/javascript" src="{% static 'controllers.js' %}"></script>
+    <script type="text/javascript" src="{% static 'routeSettings.js' %}"></script>
+    <script type="text/javascript" src="{% static 'filters.js' %}"></script>
+    <script type="text/javascript" src="{% static 'validators.js' %}"></script>
+    <script type="text/javascript" src="{% static 'lastAddedContacts.js' %}"></script>
+
+</head>
+
+<body>
+<div  ng-app="app" class="main-container">
+    <h2 class="header">My contact book</h2>
+    <a class="main-page-link" href="#/home">Main page</a>
+    <a class="contacts-page-link" href="#/contacts">Contacts</a>
+
+    <div ng-view>
+
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<div ng-controller="contactsController">
+    <div class="search-contact-list-input">
+        <button ng-click="orderValue=orderOpt.value;reverse=!reverse">Order by</button>
+        <select ng-model="orderOpt" ng-options="opt.name for opt in options">
+        </select>
+        <span>Search: </span>
+        <input ng-model="searchValue"/>
+    </div>
+    <table class="contacts-list">
+        <tr>
+            <th>Name:
+                <i ng-class="{direct: !reverse, reverse: reverse}" ng-show="orderOpt.value == options[0].value"></i>
+            </th>
+            <th>Email:
+                <i ng-class="{direct: !reverse, reverse: reverse}" ng-show="orderOpt.value == options[1].value"></i>
+            </th>
+            <th>Cell phone:
+                <i ng-class="{direct: !reverse, reverse: reverse}" ng-show="orderOpt.value == options[2].value"></i>
+            </th>
+            <th>Landline:
+                <i ng-class="{direct: !reverse, reverse: reverse}" ng-show="orderOpt.value == options[3].value"></i>
+            </th>
+            <th class="birthday-image">Birthday:
+            </th>
+        </tr>
+        <tr ng-repeat="contact in contactsModel | orderContactsBy:orderValue:reverse | searchContactsFilter:searchValue:this | paginationFilter:paginations">
+            <td>
+                <a href="#/contacts/{{contact.id}}/" ng-bind="contact.first_name + ' ' + contact.last_name"></a>
+            </td>
+            <td>
+                <span ng-bind="contact.email"></span>
+            </td>
+            <td>
+                <span ng-bind="contact.cellphone_number | usaNumber"></span>
+            </td>
+            <td>
+                <span ng-bind="contact.phone_number | usaNumber"></span>
+            </td>
+            <td class="birthday-image">
+                <img src="static/cake.png" ng-show="isBirthday(contact)">
+            </td>
+        </tr>
+    </table>
+    <a href="javascript:void(0)" ng-hide="paginations.p == minPage" ng-click="paginations.p = paginations.p - 1;" class="go-to-prev-page">Go to previous page</a>
+    <a href="javascript:void(0)" ng-hide="paginations.p == maxPage" ng-click="paginations.p = paginations.p + 1;" class="go-to-next-page">Go to next page</a>
+</div>

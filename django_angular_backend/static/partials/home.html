@@ -1,0 +1,46 @@
+<div ng-controller="mainController">
+
+    <table class="home-page-table">
+        <tr>
+            <td>
+                <span>First Name:</span>
+                <span ng-bind="user.firstName"></span>
+            </td>
+            <td>
+                <span>Email:</span>
+                <span ng-bind="user.email"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>Last Name:</span>
+                <span ng-bind="user.lastName"></span>
+            </td>
+            <td>
+                <span>Jabber:</span>
+                <span ng-bind="user.jabber"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>Date of birth:</span>
+                <span ng-bind="user.birthDate"></span>
+            </td>
+            <td>
+                <span>Skype:</span>
+                <span ng-bind="user.skype"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>Bio:</span>
+                <span ng-bind="user.bio"></span>
+            </td>
+            <td>
+                <a href="javascript:void(0)">Other...</a>
+            </td>
+        </tr>
+    </table>
+
+    <div last-added-contacts></div>
+</div>
